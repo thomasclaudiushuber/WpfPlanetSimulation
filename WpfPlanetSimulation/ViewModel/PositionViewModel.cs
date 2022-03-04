@@ -33,6 +33,10 @@ namespace WpfPlanetSimulation.ViewModel
       set
       {
         _degrees = value;
+        if (_degrees > 360)
+        {
+          _degrees = 0;
+        }
         CalculateXAndY();
         RaisePropertyChanged(nameof(Degrees));
       }

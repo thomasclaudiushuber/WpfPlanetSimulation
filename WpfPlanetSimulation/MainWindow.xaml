@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfPlanetSimulation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-  <StackPanel>
+        Title="MainWindow" Height="600" Width="600">
+  <StackPanel Margin="10">
     <TextBlock Text="Degrees:"/>
     <Slider Value="{Binding PositionMars.Degrees,Mode=TwoWay}"
               Minimum="0" Maximum="360"/>
     <TextBlock Text="Radius:"/>
     <Slider Value="{Binding PositionMars.Radius,Mode=TwoWay}"
               Minimum="50" Maximum="200"/>
+    <CheckBox Content="Is animated" IsChecked="{Binding IsAnimated,Mode=TwoWay}"/>
 
     <Canvas Width="400" Height="400" Background="#DDDDDD" Margin="10">
       <Ellipse Width="20" Height="20" Fill="Red"
