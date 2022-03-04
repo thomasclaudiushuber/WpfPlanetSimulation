@@ -1,20 +1,17 @@
 ﻿using System;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace WpfPlanetSimulation.ViewModel
 {
   public class MainViewModel : ViewModelBase
   {
-    private DispatcherTimer _timer = new(DispatcherPriority.Normal);
-
     public MainViewModel()
     {
-      _timer.Interval = TimeSpan.FromMilliseconds(10);
-      _timer.Tick += Timer_Tick;
-      _timer.Start();
+      CompositionTarget.Rendering += CompositionTarget_Rendering;
     }
 
-    private void Timer_Tick(object? sender, EventArgs e)
+    private void CompositionTarget_Rendering(object? sender, EventArgs e)
     {
       if (IsAnimated)
       {
