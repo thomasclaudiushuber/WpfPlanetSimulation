@@ -20,11 +20,17 @@ namespace WpfPlanetSimulation.ViewModel
       {
         PositionMars.Degrees += degreesChangeMars;
         PositionEarth.Degrees += 1;
+        PositionMoon.Degrees += 3;
       }
+
+      PositionMoon.CenterX = PositionEarth.X;
+      PositionMoon.CenterY = PositionEarth.Y;
     }
 
     public PositionViewModel PositionMars { get; } = new() { CenterX = 200, CenterY = 200 };
     public PositionViewModel PositionEarth { get; } = new() { CenterX = 200, CenterY = 200, Radius = 100 };
+    public PositionViewModel PositionMoon { get; } = new() { Radius = 30 };
+
 
     public bool IsAnimated
     {

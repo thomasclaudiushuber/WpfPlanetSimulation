@@ -28,6 +28,9 @@
       <Ellipse Width="20" Height="20" Fill="Green"
                Canvas.Top="{Binding PositionEarth.Y}" 
                Canvas.Left="{Binding PositionEarth.X}"/>
+      <Ellipse Width="20" Height="20" Fill="Gray"
+               Canvas.Top="{Binding PositionMoon.Y}" 
+               Canvas.Left="{Binding PositionMoon.X}"/>
       <Ellipse Width="20" Height="20" Fill="Yellow" 
                Canvas.Left="200" Canvas.Top="200"/>
     </Canvas>
