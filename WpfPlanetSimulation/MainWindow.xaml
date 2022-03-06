@@ -7,11 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="600">
   <StackPanel Margin="10">
-    <TextBlock Text="Degrees:"/>
+    <TextBlock Text="Mars degrees:"/>
     <Slider Value="{Binding PositionMars.Degrees,Mode=TwoWay}"
               Minimum="0" Maximum="360"/>
-    <TextBlock Text="Radius:"/>
+    <TextBlock Text="Mars radius:"/>
     <Slider Value="{Binding PositionMars.Radius,Mode=TwoWay}"
+              Minimum="50" Maximum="200"/>
+    <TextBlock Text="Earth degrees:"/>
+    <Slider Value="{Binding PositionEarth.Degrees,Mode=TwoWay}"
+              Minimum="0" Maximum="360"/>
+    <TextBlock Text="Earth radius:"/>
+    <Slider Value="{Binding PositionEarth.Radius,Mode=TwoWay}"
               Minimum="50" Maximum="200"/>
     <CheckBox Content="Is animated" IsChecked="{Binding IsAnimated,Mode=TwoWay}"/>
 
@@ -19,6 +25,11 @@
       <Ellipse Width="20" Height="20" Fill="Red"
                Canvas.Top="{Binding PositionMars.Y}" 
                Canvas.Left="{Binding PositionMars.X}"/>
+      <Ellipse Width="20" Height="20" Fill="Green"
+               Canvas.Top="{Binding PositionEarth.Y}" 
+               Canvas.Left="{Binding PositionEarth.X}"/>
+      <Ellipse Width="20" Height="20" Fill="Yellow" 
+               Canvas.Left="200" Canvas.Top="200"/>
     </Canvas>
   </StackPanel>
 </Window>
